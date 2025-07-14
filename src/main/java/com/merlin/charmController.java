@@ -1,8 +1,6 @@
 package com.merlin;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -10,15 +8,23 @@ import java.util.List;
 @RequestMapping("/api/v1/charms")
 public class charmController {
 
+    private final charmService charmService;
+
+    public charmController(charmService charmService) {
+        this.charmService = charmService;
+    }
+    
     @GetMapping
     public List<charm> charms() {
-        return List.of(
-                new charm("Merlin", "Blue", "Magic"),
-                new charm("Arthur", "Gold", "Leadership"),
-                new charm("Gwen", "Green", "Wisdom"),
-                new charm("Morgana", "Black", "Mystery")
-        );
-
+        return charmService.getAllCharms();
+    }
+    @PostMapping
+    public void saveCharm(@RequestBody  charm newCharm) {
+        charmService.saveCharm(newCharm);
     }
 
+    @GetMapping("{id}")
+    public charm getCharmWithId(@PathVariable Long id) {
+        return charmService.getCharmWithId(id);
+    }
 }

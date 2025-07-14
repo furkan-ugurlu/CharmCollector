@@ -1,9 +1,16 @@
 package com.merlin;
 
+import jakarta.persistence.*;
+
 import java.util.Objects;
 
+@Entity
 public class charm {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(unique = true)
     private String name;
     private String colour;
     private String feature;
@@ -47,5 +54,13 @@ public class charm {
     @Override
     public int hashCode() {
         return Objects.hash(name, colour, feature); // Use the fields to generate a hash code
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
     }
 }
