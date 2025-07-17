@@ -4,24 +4,29 @@ import jakarta.persistence.*;
 
 import java.util.Objects;
 
+
 @Entity
-public class charm {
+public class Charm {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "memento", sequenceName = "charm_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "memento")
     private Long id;
-    @Column(unique = true)
+    @Column(name="name",unique = true,nullable = false,columnDefinition = "TEXT") // Our code not connected to a database, so this is just a placeholder so we will fix it later
     private String name;
     private String colour;
     private String feature;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    public charm(String name, String colour, String feature) {
+    public Charm(String name, String colour, String feature) {
         this.name = name;
         this.colour = colour;
         this.feature = feature;
     }
 
-    public charm() {
+    public Charm() {
     }
 
     public String getName() {
@@ -47,7 +52,7 @@ public class charm {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        charm charm = (charm) o;
+        Charm charm = (Charm) o;
         return Objects.equals(name, charm.name) && Objects.equals(colour, charm.colour) && Objects.equals(feature, charm.feature);
     }
 

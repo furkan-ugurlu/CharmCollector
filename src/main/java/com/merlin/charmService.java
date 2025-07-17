@@ -13,7 +13,7 @@ public class charmService {
         this.charmRepository = charmRepository;
     }
 
-    public void saveCharm(charm newCharm) {
+    public void saveCharm(Charm newCharm) {
         charmRepository.save(newCharm);
     }
 
@@ -21,11 +21,11 @@ public class charmService {
         charmRepository.deleteById(id);
     }
 
-    public List<charm> getAllCharms() {
+    public List<Charm> getAllCharms() {
         return charmRepository.findAll();
     }
 
-    public charm getCharmWithId(Long id) {
+    public Charm getCharmWithId(Long id) {
         return charmRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Charm with id " + id + " not found"));
     }

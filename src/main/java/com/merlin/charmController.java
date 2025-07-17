@@ -15,16 +15,16 @@ public class charmController {
     }
     
     @GetMapping
-    public List<charm> charms() {
+    public List<Charm> charms() {
         return charmService.getAllCharms();
     }
     @PostMapping
-    public void saveCharm(@RequestBody  charm newCharm) {
+    public void saveCharm(@RequestBody Charm newCharm) {
         charmService.saveCharm(newCharm);
     }
 
     @GetMapping("{id}")
-    public charm getCharmWithId(@PathVariable Long id) {
+    public Charm getCharmWithId(@PathVariable Long id) {
         return charmService.getCharmWithId(id);
     }
 }
