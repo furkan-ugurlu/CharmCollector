@@ -24,12 +24,13 @@ This project demonstrates mastery of:
 - **Relationship Management**: Adding/removing entities from collections
 - **Query Optimization**: Efficient database queries with proper joins
 
-### 🚀 **Strong Backend Infrastructure**
+### 🚀 **Robust Backend Infrastructure**
 - **Spring Boot Framework**: Industry-standard enterprise framework
 - **Dependency Injection**: Loose coupling with `@Autowired`
 - **Exception Handling**: Proper error management and validation
 - **RESTful Design**: Following REST principles and HTTP standards
 - **Service Layer Pattern**: Separation of concerns and business logic encapsulation
+- **Scalability & Resilience**: Built for growth and reliability
 
 ## 🎮 Features
 
