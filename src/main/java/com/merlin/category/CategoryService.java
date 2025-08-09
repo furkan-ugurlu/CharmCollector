@@ -75,6 +75,8 @@ public class CategoryService {
                 .orElseThrow(() -> new RuntimeException("Charm not found"));
 
         category.getCharms().remove(charm);
+        // Ensure the relationship is cleared on the charm side as well
+        charm.setCategory(null);
         categoryRepo.save(category);
     }
 
