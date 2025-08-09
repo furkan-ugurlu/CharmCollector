@@ -42,6 +42,8 @@ public class UserService {
                 .orElseThrow(() -> new RuntimeException("Charm not found"));
 
         user.getCharms().remove(charm);
+        // Clear the relationship on the charm to keep the association consistent
+        charm.setUser(null);
         userRepository.save(user);
     }
 
