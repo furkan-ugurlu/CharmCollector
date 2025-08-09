@@ -24,7 +24,7 @@ This project demonstrates mastery of:
 - **Relationship Management**: Adding/removing entities from collections
 - **Query Optimization**: Efficient database queries with proper joins
 
-### 🚀 **Strong Backend Institution**
+### 🚀 **Strong Backend Infrastructure**
 - **Spring Boot Framework**: Industry-standard enterprise framework
 - **Dependency Injection**: Loose coupling with `@Autowired`
 - **Exception Handling**: Proper error management and validation
