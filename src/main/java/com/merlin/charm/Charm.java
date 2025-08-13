@@ -24,6 +24,7 @@ public class Charm {
     @JoinColumn(name = "user_id")
     private User user;
 
+    //Good
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
